@@ -1,0 +1,28 @@
+FROM devbook
+
+RUN apt-get update && apt-get install -y \
+  wget
+
+RUN set -eux; \
+  url='https://download.docker.com/linux/static/stable/x86_64/docker-20.10.13.tgz'; \
+	wget -O docker.tgz "$url"; \
+	\
+	tar --extract \
+		--file docker.tgz \
+		--strip-components 1 \
+		--directory /usr/local/bin/ \
+	; \
+	rm docker.tgz; \
+	\
+	dockerd --version; \
+	docker --version; \
+  \
+  wget -O dagger.tar.gz https://github.com/mlejva/dagger-test/releases/download/v1.0/dagger_v0.2.1_linux_amd64.tar.gz; \
+  \
+  tar xzf dagger.tar.gz; \
+  \
+  mv dagger /usr/local/bin/;
+
+ADD dagger /dagger
+
+RUN export PS1='\W > '
