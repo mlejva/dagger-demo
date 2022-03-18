@@ -42,14 +42,16 @@ function App() {
 
   return (
     <div className="App">
-      <Button
-        onClick={goTodoapp}
-        text="Go to todoapp"
-      />
-      <Button
-        onClick={build}
-        text="Build"
-      />
+      <div className="buttons">
+        <Button
+          onClick={goTodoapp}
+          text="Go to todoapp"
+        />
+        <Button
+          onClick={build}
+          text="Build"
+        />
+      </div>
       <div className="terminal">
         <Terminal
           ref={terminalRef}

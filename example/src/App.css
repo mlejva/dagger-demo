@@ -18,3 +18,12 @@
   margin: 0 auto;
 }
 
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.buttons > div {
+  margin-right: 8px;
+}
