@@ -27,3 +27,7 @@
 .buttons > div {
   margin-right: 8px;
 }
+
+.title {
+  margin: 32px auto;
+}

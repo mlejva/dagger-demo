@@ -42,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      <h3 className="title">Dagger</h3>
       <div className="buttons">
         <Button
           onClick={goTodoapp}
